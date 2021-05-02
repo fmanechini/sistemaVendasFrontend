@@ -5,8 +5,7 @@ import thunk from 'redux-thunk'
 import reducers from './reducers/reducers'
 import ReactDOM from 'react-dom';
 import './index.css';
-import SalePage from './pages/salePage/SalePage';
-import RegistryPage from './pages/registryPage/RegistryPage'
+import PublicRoutes from './routes/publicRoutes'
 import Snackbar from './components/snackbar/Snackbar'
 
 
@@ -14,7 +13,7 @@ const store = createStore(reducers, applyMiddleware(thunk))
 
 ReactDOM.render(
     <Provider store={store}>
-        <RegistryPage />
+        <PublicRoutes />
         <Snackbar />
     </Provider>, 
 document.getElementById('root'));

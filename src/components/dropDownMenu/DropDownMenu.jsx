@@ -7,43 +7,35 @@ import { withStyles } from '@material-ui/core/styles';
 
 const MenuListComponent = (props) =>  {
 
-    const [state, setState] = React.useState({
-      age: '',
-      name: 'hai',
-    });
-  
-    const handleChange = (event) => {
-      const name = event.target.name;
-      setState({
-        ...state,
-        [name]: event.target.value,
-      });
-    };
-
     const { classes } = props
+    if (props.optionsList.length > 0) {
     return (
         <div className={classes.dropDownMenu}>
-            <InputLabel shrink htmlFor="age-native-label-placeholder">
+            <InputLabel shrink>
                 {props.labelMessage}
             </InputLabel>
         <FormControl className={classes.formControl}>
             <NativeSelect
                 className={classes.selectEmpty}
-                value={state.age}
-                name="age"
-                onChange={handleChange}
-                inputProps={{ 'aria-label': 'age' }}
+                value={props.selectedValue}
+                name={props.name}
+                onChange={props.onChange}
             >
                 <option value="" disabled>
                     {props.placeholder}
-            </option>
-                <option value={10}>Ten</option>
-                <option value={20}>Twenty</option>
-                <option value={30}>Thirty</option>
+                </option>
+                {props.optionsList.map(
+                    (elem) => {
+                    return (<option value={elem.name}>{elem.name}</option>)
+                    })
+                }
             </NativeSelect>
         </FormControl>
         </div>
     );
+} else {
+    return <span>haha</span>
+}
 }
 
 export default withStyles(styles)(MenuListComponent)

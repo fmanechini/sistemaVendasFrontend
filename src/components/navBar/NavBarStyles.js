@@ -7,13 +7,19 @@ const styles = () => ({
         borderBottom: "2px solid #d4d4d4"
     },
     centerText: {
-        textTransform: "capitalize",
         display: "flex",
+        textTransform: "capitalize",
+        justifyContent: "flex-end",
         flexGrow: 1.5,
         alignItems: "center",
         marginRight: "20px",
-        color: "green",
-        fontFamily: "cabinBold"
+        color: "#000",
+        fontFamily: "cabinBold",
+        textDecoration: "none",
+        "&:hover": {
+            color: "#000",
+            textDecoration: "none",
+        }
     },
     companyText: {
         display: "flex",
@@ -22,7 +28,12 @@ const styles = () => ({
         flexGrow: 1,
         alignItems: "center",
         color: "#000",
-        paddingTop: "8px"
+        paddingTop: "8px",
+        textDecoration: "none",
+        "&:hover": {
+            color: "#000",
+            textDecoration: "none",
+        }
     },
     icon: {
         fontSize: "50px",

@@ -29,7 +29,7 @@ export class RegistryPage extends Component {
     const { classes } = this.props;
     return (
       <Fragment>
-        <NavBar centerText="Caixa livre" companyName="logoipsum" />
+        <NavBar centerText="Registrar Itens" companyName="logoipsum" />
         <div className={classes.page}>
           <div className={classes.inputDiv}>
             <h1 className={classes.title}>Registrar Cliente</h1>

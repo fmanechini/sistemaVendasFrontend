@@ -5,6 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import BlurCircularIcon from '@material-ui/icons/BlurCircular';
 import styles from './NavBarStyles'
+import {Link} from 'react-router-dom'
 
 const NavBar = (props) => {
     const { classes } = props
@@ -14,10 +15,10 @@ const NavBar = (props) => {
             <Toolbar variant="dense">
                 <BlurCircularIcon className={classes.icon}/>
                 <Typography variant="h6" className={classes.companyText}>
-                    <span className="title">{props.companyName}</span>
+                    <Link className={classes.companyText} to='/'>{props.companyName}</Link>
                 </Typography>
                 <Typography variant="h4" className={classes.centerText}>
-                    <span className="title">{props.centerText}</span>
+                    <Link className={classes.centerText} to='/register'>{props.centerText}</Link>
                 </Typography>
             </Toolbar>
         </AppBar>

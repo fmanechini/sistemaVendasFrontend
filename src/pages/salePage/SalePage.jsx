@@ -9,7 +9,7 @@ const SalePage = (props) => {
   const { classes } = props;
   return (
     <Fragment>
-      <NavBar centerText="Caixa livre" companyName="logoipsum" />
+      <NavBar centerText="Registrar Itens" companyName="logoipsum" />
       <div className={classes.page}>
         <SaleDetails />
         <SaleSummary />
